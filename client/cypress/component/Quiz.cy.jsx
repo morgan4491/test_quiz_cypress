@@ -32,8 +32,35 @@ describe('<Quiz />', () => {
       // Confirm h2 element with text of 'What does the method append() do in a list?'
       cy.get('h2').contains('What does the method append() do in a list?');
 
+      // Make sure all answers are displayed properly
+      cy.get('button').contains('1');
+      cy.get('button').contains('2');
+      cy.get('button').contains('3');
+      cy.get('button').contains('4');
+      cy.get('div').contains('Adds a new element at the end of the list');
+      cy.get('div').contains('Removes the last element of the list');
+      cy.get('div').contains('Sorts the list in ascending order');
+      cy.get('div').contains('Removes all elements from the list');
+
       // Find the button with text of '1' and click() to answer the first mock question
       cy.get('button').contains('1').click();
+
+      // Make sure there is a div element with a class of 'card' when the first question pops up
+      cy.get('div.card');
+
+      // Confirm h2 element with text of 'What does the method append() do in a list?'
+      cy.get('h2').contains('How do you create a tuple in Python?');
+
+      // Make sure all answers are displayed properly
+      cy.get('button').contains('1');
+      cy.get('button').contains('2');
+      cy.get('button').contains('3');
+      cy.get('button').contains('4');
+      cy.get('div').contains('[]');
+      cy.get('div').contains('{}');
+      cy.get('div').contains('()');
+      cy.get('div').contains('tuple[]');
+
 
       // Find the button with text of '3' and click() to answer the second mock question
       cy.get('div button').contains('3').click();
@@ -45,8 +72,8 @@ describe('<Quiz />', () => {
       cy.get('div').contains('2/2');
 
       // Find the 'Take New Quiz' button and click it
-      // cy.get('button').contains('Take New Quiz').click();
-      
+      cy.get('button').contains('Take New Quiz')
+
     });
   });
 });
