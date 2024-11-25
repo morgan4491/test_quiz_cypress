@@ -22,6 +22,15 @@ describe('<Quiz />', () => {
       cy.wait('@getQuestions');
 
       // TODO: Complete the test code to answer both mock questions and ensure the score is correct at the end of the quiz
+
+      // Find the button with text of '1' and click() to answer the first mock question
+      cy.get('div button').contains('1').click();
+
+      // Find the button with text of '3' and click() to answer the second mock question
+      cy.get('div button').contains('3').click();
+
+      // Find the score and make sure correct
+      
     });
   });
 });
