@@ -25,8 +25,6 @@ describe('Integration Tests', () => {
       // Click the 'Start Quiz' button
       cy.get('button').contains('Start Quiz').click();
 
-      // cy.get('h2').contains('What does the method append() do in a list?');
-
       // When the user clicks on an answer(in this case correct answer is option 1), it should take them to the next quiz question
       cy.get('button').contains('1').click();
 

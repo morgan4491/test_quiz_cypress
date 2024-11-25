@@ -15,6 +15,9 @@ describe('<Quiz />', () => {
       // Mount the Quiz component
       mount(<Quiz />);
 
+      // Should have a button with 'Start Quiz' as text once the component loads
+      cy.get('button').should('contain.text', 'Start Quiz');
+
       // Start the quiz
       cy.get('button').contains('Start Quiz').click();
 
@@ -23,8 +26,14 @@ describe('<Quiz />', () => {
 
       // TODO: Complete the test code to answer both mock questions and ensure the score is correct at the end of the quiz
 
+      // Make sure there is a div element with a class of 'card' when the first question pops up
+      cy.get('div.card');
+
+      // Confirm h2 element with text of 'What does the method append() do in a list?'
+      cy.get('h2').contains('What does the method append() do in a list?');
+
       // Find the button with text of '1' and click() to answer the first mock question
-      cy.get('div button').contains('1').click();
+      cy.get('button').contains('1').click();
 
       // Find the button with text of '3' and click() to answer the second mock question
       cy.get('div button').contains('3').click();
