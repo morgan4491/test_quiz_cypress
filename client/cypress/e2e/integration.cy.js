@@ -5,7 +5,8 @@ describe('Integration Tests', () => {
 
     cy.get('div button').contains('Start Quiz').click();
 
-    cy.get('div button').contains('1');
+    // Check for a div with a class of 'card'
+    cy.get('div.card');
   });
 
   // TODO: Complete the integration test to mock a user visiting the site and completing the quiz
@@ -20,6 +21,19 @@ describe('Integration Tests', () => {
 
       // Visit the page
       cy.visit('/');
+
+      // Click the 'Start Quiz' button
+      cy.get('button').contains('Start Quiz').click();
+
+      // cy.get('h2').contains('What does the method append() do in a list?');
+
+      // When the user clicks on an answer(in this case correct answer is option 1), it should take them to the next quiz question
+      cy.get('button').contains('1').click();
+
+      // When the user clicks on an answer(in this case correct answer is option 3), it should take them to their score
+      cy.get('button').contains('3').click();
+
+      cy.get('div').contains('2/2');
 
     });
   });
