@@ -3,7 +3,9 @@ describe('Integration Tests', () => {
   it('Should show the start button on initial page load and successfully start the quiz', () => {
     cy.visit('/');
 
+    cy.get('div button').contains('Start Quiz').click();
 
+    cy.get('div button').contains('1');
   });
 
   // TODO: Complete the integration test to mock a user visiting the site and completing the quiz

@@ -29,7 +29,14 @@ describe('<Quiz />', () => {
       // Find the button with text of '3' and click() to answer the second mock question
       cy.get('div button').contains('3').click();
 
+      // Find the 'Quiz Completed' text after the last mock question is answered
+      cy.get('h2').contains('Quiz Completed');
+
       // Find the score and make sure correct
+      cy.get('div').contains('2/2');
+
+      // Find the 'Take New Quiz' button and click it
+      // cy.get('button').contains('Take New Quiz').click();
       
     });
   });
